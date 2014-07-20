@@ -7,12 +7,12 @@ require_once 'lib/Unirest.php';
 
   $facebook = new Facebook(array(
        'cookie' => true,
- 'appId' => '',
-    'secret' => 'f',
+ 'appId' => 'your app ID',
+    'secret' => 'your app Secret',
    ));   
 
-$facebook->setAccessToken('');
- $fql = "select online_presence from user where uid in (select uid2 FROM friend WHERE uid1 = '')  and uid=''";
+$facebook->setAccessToken('Access Token aquired from user');
+ $fql = "select online_presence from user where uid in (select uid2 FROM friend WHERE uid1 = 'uid of friend')  and uid='uid of user'";
 
   $param  =   array(
       'method'    => 'fql.query',
